@@ -5,14 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="v2.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <title>Eric Myer</title>
 </head>
 
 <body class="container colors">
     <header class="em colors" id="global-header">
 
-        <nav class="em alt-colors" id="nav-bar" data-aos="fade" data-aos-mirror="false">
+        <nav class="em alt-colors" id="nav-bar">
             <img class="em" id="logo" src="./images/bolt.png" alt="EM Logo">
             <ul class="em" id="nav-links">
 
@@ -23,17 +22,15 @@
             </ul>
         </nav>
 
-        <div class="em sect-heads" data-aos="fade" data-aos-mirror="true">
+        <div class="em sect-heads">
             <h1 class="em sect-head " id="sect-head">Intro.</h1>
         </div>
     </header>
 
-    <main class="em content" data-aos="slide-up">
+    <main class="em content">
         <section class="em sects" id="intro-sect">
             <div class="em sect-content" id="intro-content">
-                <div class="em sect-p alt-colors" id="intro-p" 
-                data-aos="fade-up"
-                data-aos-anchor-placement="top-bottom">
+                <div class="em sect-p alt-colors" id="intro-p">
                     <h2 class="em content-head">Eric Myer</h2>
                     <p class="em p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -98,15 +95,6 @@
         <span id="cr">Copyright<i class="fa fa-copyright" aria-hidden="true"></i></span>
         <span id="social">Socials</span>
     </footer>
-
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            once: true, // whether animation should happen only once - while scrolling down
-            mirror: true, // whether elements should animate out while scrolling past them
-            duration: 2000,
-        });
-    </script>
 
     <script>
         sects = document.getElementsByClassName("sects")
