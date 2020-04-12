@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="v2.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Eric Myer</title>
+</head>
+
+<body class="container colors">
+    <header class="em colors" id="global-header">
+
+        <nav class="em alt-colors" id="nav-bar" data-aos="fade" data-aos-mirror="false">
+            <img class="em" id="logo" src="./images/bolt.png" alt="EM Logo">
+            <ul class="em" id="nav-links">
+
+                <li class="em nav-link" id="intro" on onclick="hiddenPage()"> Intro </li>
+                <li class="em nav-link" id="who" onclick="hiddenPage()"> Who </li>
+                <li class="em nav-link" id="what" onclick="hiddenPage()"> What </li>
+                <li class="em nav-link" id="history" onclick="hiddenPage()"> History </li>
+            </ul>
+        </nav>
+
+        <div class="em sect-heads" data-aos="fade" data-aos-mirror="true">
+            <h1 class="em sect-head " id="sect-head">Intro.</h1>
+        </div>
+    </header>
+
+    <main class="em content" data-aos="slide-up">
+        <section class="em sects" id="intro-sect">
+            <div class="em sect-content" id="intro-content">
+                <div class="em sect-p alt-colors" id="intro-p" 
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom">
+                    <h2 class="em content-head">Eric Myer</h2>
+                    <p class="em p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perferendis corporis est inventore quod voluptatum numquam.
+                        Aliquam similique consectetur beatae natus accusantium nostrum
+                        soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
+                    </p>
+                </div>
+                <div class="em sect-fig" id="history-fig"></div>
+            </div>
+        </section>
+
+        <section class="em sects" id="who-sect">
+            <div class="em sect-content" id="who-content">
+                <div class="em sect-p alt-colors" id="who-p">
+                    <h2 class="em content-head">Eric Myer</h2>
+                    <p class="em p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perferendis corporis est inventore quod voluptatum numquam.
+                        Aliquam similique consectetur beatae natus accusantium nostrum
+                        soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
+                    </p>
+                </div>
+                <div class="em sect-fig" id="history-fig">
+                    <img src="./images/profilejpg.jpeg" alt="Profile Photo" class="em images" id="profilejpg">
+                </div>
+            </div>
+        </section>
+
+        <section class="em sects" id="what-sect">
+            <div class="em sect-content" id="what-content">
+                <div class="em sect-p alt-colors" id="what-p">
+                    <h2 class="em content-head">Eric Myer</h2>
+                    <p class="em p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perferendis corporis est inventore quod voluptatum numquam.
+                        Aliquam similique consectetur beatae natus accusantium nostrum
+                        soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
+                    </p>
+                </div>
+                <div class="em sect-fig" id="history-fig"></div>
+            </div>
+        </section>
+
+        <section class="em sects" id="history-sect">
+            <div class="em sect-content" id="history-content">
+                <div class="em sect-p alt-colors" id="history-p">
+                    <h2 class="em content-head">Eric Myer</h2>
+                    <p class="em p">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Perferendis corporis est inventore quod voluptatum numquam.
+                        Aliquam similique consectetur beatae natus accusantium nostrum
+                        soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
+                    </p>
+                </div>
+                <div class="em sect-fig" id="history-fig"></div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="em" id="global-footer">
+        <span id="cr">Copyright<i class="fa fa-copyright" aria-hidden="true"></i></span>
+        <span id="social">Socials</span>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            mirror: true, // whether elements should animate out while scrolling past them
+            duration: 2000,
+        });
+    </script>
+
+    <script>
+        sects = document.getElementsByClassName("sects")
+        colors = document.querySelectorAll(".colors")
+        alt = document.querySelectorAll(".alt-colors")
+
+        console.log(colors);
+        console.log(alt);
+
+        function hiddenPage() {
+            scrollTo(top)
+
+            for (let i = 0; i < sects.length; i++) {
+                sects[i].style.width = "0%"
+                document.getElementById("sect-head").style.width = "0%"
+            }
+
+            document.getElementById("sect-head").style.width = "100%"
+            document.getElementById(event.target.id + "-sect").style.width = "100%"
+
+            if (event.target.id == "intro") {
+                document.getElementById("sect-head").innerText = "Intro."
+                colors.forEach(element => {
+                    element.style.backgroundColor = "#005500"
+                    element.style.color = "#85FF2D"
+                });
+                alt.forEach(element => {
+                    element.style.backgroundColor = "#85FF2D"
+                    element.style.color = "#005500"
+                });
+            }
+
+            if (event.target.id == "who") {
+                document.getElementById("sect-head").innerText = "Who."
+                colors.forEach(element => {
+                    element.style.backgroundColor = "#800000"
+                    element.style.color = "#FF2D85"
+                });
+                alt.forEach(element => {
+                    element.style.backgroundColor = "#FF2D85"
+                    element.style.color = "#800000"
+                });
+            }
+
+            if (event.target.id == "what") {
+                document.getElementById("sect-head").innerText = "What."
+                colors.forEach(element => {
+                    element.style.backgroundColor = "#914F15"
+                    element.style.color = "#FFD42D"
+                });
+                alt.forEach(element => {
+                    element.style.backgroundColor = "#FFD42D"
+                    element.style.color = "#914F15"
+                });
+            }
+
+            if (event.target.id == "history") {
+                document.getElementById("sect-head").innerText = "History."
+                colors.forEach(element => {
+                    element.style.backgroundColor = "#002627"
+                    element.style.color = "#A82DFF"
+                });
+                alt.forEach(element => {
+                    element.style.backgroundColor = "#A82DFF"
+                    element.style.color = "#002627"
+                });
+            }
+        }
+
+
+        // var prevScrollpos = window.pageYOffset;
+
+        // window.onscroll = function () {
+        //     var currentScrollPos = window.pageYOffset;
+
+        //     if (prevScrollpos > currentScrollPos) {
+        //         document.getElementById("nav-bar").style.opacity = "1";
+        //         document.getElementById("sect-head").style.opacity = "1";
+        //     } else {
+        //         document.getElementById("nav-bar").style.opacity = "0";
+        //         document.getElementById("sect-head").style.opacity = "0";
+        //     }
+            
+        //     prevScrollpos = currentScrollPos;
+        // }
+    </script>
+
+
+</body>
+
+</html>
