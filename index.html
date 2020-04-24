@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="v2.css">
-    <title>Eric Myer</title>
+    <title>Eric Myer | Web Dev & Designer</title>
 </head>
 
 <body class="container colors">
     <header class="em colors" id="global-header">
 
-        <nav class="em alt-colors" id="nav-bar">
-            <img class="em" id="logo" src="./images/bolt.png" alt="EM Logo">
+        <img class="em" id="logo" src="./images/bolt.png" alt="EM Logo">
+        <nav class="em box colors" id="nav-bar">
             <ul class="em" id="nav-links">
 
-                <li class="em nav-link" id="intro" on onclick="hiddenPage()"> Intro </li>
+                <li class="em nav-link" id="intro" onclick="hiddenPage()"> Intro </li>
                 <li class="em nav-link" id="who" onclick="hiddenPage()"> Who </li>
                 <li class="em nav-link" id="what" onclick="hiddenPage()"> What </li>
-                <li class="em nav-link" id="history" onclick="hiddenPage()"> History </li>
+                <li class="em nav-link" id="work" onclick="hiddenPage()"> Work </li>
             </ul>
         </nav>
 
@@ -30,7 +30,7 @@
     <main class="em content">
         <section class="em sects" id="intro-sect">
             <div class="em sect-content" id="intro-content">
-                <div class="em sect-p alt-colors" id="intro-p">
+                <div class="em sect-p box colors" id="intro-p">
                     <h2 class="em content-head">Eric Myer</h2>
                     <p class="em p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -39,13 +39,13 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="history-fig"></div>
+                <div class="em sect-fig" id="intro-fig"></div>
             </div>
         </section>
 
         <section class="em sects" id="who-sect">
             <div class="em sect-content" id="who-content">
-                <div class="em sect-p alt-colors" id="who-p">
+                <div class="em sect-p box colors" id="who-p">
                     <h2 class="em content-head">Eric Myer</h2>
                     <p class="em p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -54,7 +54,7 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="history-fig">
+                <div class="em sect-fig" id="who-fig">
                     <img src="./images/profilejpg.jpeg" alt="Profile Photo" class="em images" id="profilejpg">
                 </div>
             </div>
@@ -62,7 +62,7 @@
 
         <section class="em sects" id="what-sect">
             <div class="em sect-content" id="what-content">
-                <div class="em sect-p alt-colors" id="what-p">
+                <div class="em sect-p box colors" id="what-p">
                     <h2 class="em content-head">Eric Myer</h2>
                     <p class="em p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -71,13 +71,13 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="history-fig"></div>
+                <div class="em sect-fig" id="what-fig"></div>
             </div>
         </section>
 
-        <section class="em sects" id="history-sect">
-            <div class="em sect-content" id="history-content">
-                <div class="em sect-p alt-colors" id="history-p">
+        <section class="em sects" id="work-sect">
+            <div class="em sect-content" id="work-content">
+                <div class="em sect-p box colors" id="work-p">
                     <h2 class="em content-head">Eric Myer</h2>
                     <p class="em p">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -86,20 +86,20 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="history-fig"></div>
+                <div class="em sect-fig" id="work-fig"></div>
             </div>
         </section>
     </main>
 
-    <footer class="em" id="global-footer">
-        <span id="cr">Copyright<i class="fa fa-copyright" aria-hidden="true"></i></span>
-        <span id="social">Socials</span>
+    <footer class="em colors" id="global-footer">
+        <span id="cr">Designed & Coded by Eric Myer<i class="fa fa-copyright" aria-hidden="true"></i></span>
+        <!-- <span id="social">Socials</span> -->
     </footer>
 
     <script>
         sects = document.getElementsByClassName("sects")
         colors = document.querySelectorAll(".colors")
-        alt = document.querySelectorAll(".alt-colors")
+        alt = document.querySelectorAll(".box colors")
 
         console.log(colors);
         console.log(alt);
@@ -118,68 +118,70 @@
             if (event.target.id == "intro") {
                 document.getElementById("sect-head").innerText = "Intro."
                 colors.forEach(element => {
-                    element.style.backgroundColor = "#005500"
-                    element.style.color = "#85FF2D"
+                    element.style.backgroundColor = "#001900"
+                    element.style.color = "#7FAA7F"
                 });
                 alt.forEach(element => {
-                    element.style.backgroundColor = "#85FF2D"
-                    element.style.color = "#005500"
+                    element.style.backgroundColor = "#001900"
+                    element.style.color = "#7FAA7F"
+                    element.style.border = "#7FAA7F 3px solid"
                 });
             }
 
             if (event.target.id == "who") {
                 document.getElementById("sect-head").innerText = "Who."
                 colors.forEach(element => {
-                    element.style.backgroundColor = "#800000"
-                    element.style.color = "#FF2D85"
+                    element.style.backgroundColor = "#330000"
+                    element.style.color = "#bf7f7f"
                 });
                 alt.forEach(element => {
-                    element.style.backgroundColor = "#FF2D85"
-                    element.style.color = "#800000"
+                    element.style.backgroundColor = "#330000"
+                    element.style.color = "#bf7f7f"
+                    element.style.border = "#bf7f7f 3px solid"
                 });
             }
 
             if (event.target.id == "what") {
                 document.getElementById("sect-head").innerText = "What."
                 colors.forEach(element => {
-                    element.style.backgroundColor = "#914F15"
-                    element.style.color = "#FFD42D"
+                    element.style.backgroundColor = "#2b1706"
+                    element.style.color = "#bd9572"
                 });
                 alt.forEach(element => {
-                    element.style.backgroundColor = "#FFD42D"
-                    element.style.color = "#914F15"
+                    element.style.backgroundColor = "#2b1706"
+                    element.style.color = "#bd9572"
+                    element.style.border = "#bd9572 3px solid"
                 });
             }
 
-            if (event.target.id == "history") {
-                document.getElementById("sect-head").innerText = "History."
+            if (event.target.id == "work") {
+                document.getElementById("sect-head").innerText = "Work."
                 colors.forEach(element => {
-                    element.style.backgroundColor = "#002627"
-                    element.style.color = "#A82DFF"
+                    element.style.backgroundColor = "#001313"
+                    element.style.color = "#667c7d"
                 });
                 alt.forEach(element => {
-                    element.style.backgroundColor = "#A82DFF"
-                    element.style.color = "#002627"
+                    element.style.backgroundColor = "#001313"
+                    element.style.color = "#667c7d"
+                    element.style.border = "#667c7d 3px solid"
                 });
             }
         }
 
 
-        // var prevScrollpos = window.pageYOffset;
+        var prevScrollpos = window.pageYOffset;
 
-        // window.onscroll = function () {
-        //     var currentScrollPos = window.pageYOffset;
+        window.onscroll = function () {
+            var currentScrollPos = window.pageYOffset;
 
-        //     if (prevScrollpos > currentScrollPos) {
-        //         document.getElementById("nav-bar").style.opacity = "1";
-        //         document.getElementById("sect-head").style.opacity = "1";
-        //     } else {
-        //         document.getElementById("nav-bar").style.opacity = "0";
-        //         document.getElementById("sect-head").style.opacity = "0";
-        //     }
-            
-        //     prevScrollpos = currentScrollPos;
-        // }
+            if (prevScrollpos > currentScrollPos) {
+                document.getElementById("nav-bar").style.opacity = "1";
+            } else {
+                document.getElementById("nav-bar").style.opacity = "0";
+            }
+
+            prevScrollpos = currentScrollPos;
+        }
     </script>
 
 
