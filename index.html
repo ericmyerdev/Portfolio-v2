@@ -11,14 +11,14 @@
 <body class="container colors">
     <header class="em colors" id="global-header">
 
-        <img class="em" id="logo" src="./images/bolt.png" alt="EM Logo">
+        <span class="menu" id="menu"><i class="fas fa-plus-square" id="menuBtn" onclick="toggleNav()"></i></span>
         <nav class="em box colors" id="nav-bar">
+            <span class="em nav-link"><i class="fa fa-times" id="closeBtn" onclick="toggleNav()"></i></span>
             <ul class="em" id="nav-links">
-
-                <li class="em nav-link" id="intro" onclick="hiddenPage()"> Intro </li>
-                <li class="em nav-link" id="who" onclick="hiddenPage()"> Who </li>
-                <li class="em nav-link" id="what" onclick="hiddenPage()"> What </li>
-                <li class="em nav-link" id="work" onclick="hiddenPage()"> Work </li>
+                <li class="em nav-link" id="intro" onclick="openPage()"> Intro </li>
+                <li class="em nav-link" id="who" onclick="openPage()"> Who </li>
+                <li class="em nav-link" id="what" onclick="openPage()"> What </li>
+                <li class="em nav-link" id="work" onclick="openPage()"> Work </li>
             </ul>
         </nav>
 
@@ -39,7 +39,7 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="intro-fig"></div>
+                <!-- <div class="em sect-fig box" id="intro-fig"></div> -->
             </div>
         </section>
 
@@ -54,7 +54,7 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="who-fig">
+                <div class="em sect-fig box" id="who-fig">
                     <img src="./images/profilejpg.jpeg" alt="Profile Photo" class="em images" id="profilejpg">
                 </div>
             </div>
@@ -71,7 +71,7 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="what-fig"></div>
+                <!-- <div class="em sect-fig box" id="what-fig"></div> -->
             </div>
         </section>
 
@@ -86,35 +86,52 @@
                         soluta dolorem nesciunt, dolorum, necessitatibus quas pariatur ratione.
                     </p>
                 </div>
-                <div class="em sect-fig" id="work-fig"></div>
+                <!-- <div class="em sect-fig box" id="work-fig"></div> -->
             </div>
         </section>
     </main>
 
     <footer class="em colors" id="global-footer">
-        <span id="cr">Designed & Coded by Eric Myer<i class="fa fa-copyright" aria-hidden="true"></i></span>
+        <span id="cr">Designed & Coded by Eric Myer</i></span>
         <!-- <span id="social">Socials</span> -->
     </footer>
 
     <script>
         sects = document.getElementsByClassName("sects")
         colors = document.querySelectorAll(".colors")
-        alt = document.querySelectorAll(".box colors")
+        alt = document.querySelectorAll(".box")
 
-        console.log(colors);
-        console.log(alt);
-
-        function hiddenPage() {
-            scrollTo(top)
-
-            for (let i = 0; i < sects.length; i++) {
-                sects[i].style.width = "0%"
+        function toggleNav() {
+            // if (window.innerWidth <= 1000) {
+                if (document.getElementById("nav-bar").style.visibility == "hidden") {
+                    document.getElementById("nav-bar").style.visibility = "initial"
+                    document.getElementById("nav-bar").style.width = "75vw"
+                    document.getElementById("closeBtn").style.fontSize = "40px"
+                    document.getElementById("closeBtn").style.visibility = "visible"
+                    document.getElementById("nav-links").style.fontSize = "40px"
+                    document.getElementById("menuBtn").style.visibility = "hidden"
+                } else {
+                    document.getElementById("nav-bar").style.visibility = "hidden"
+                    document.getElementById("nav-bar").style.width = "0"
+                    document.getElementById("closeBtn").style.fontSize = "0"
+                    document.getElementById("nav-links").style.fontSize = "0"
+                    document.getElementById("menuBtn").style.visibility = "visible"
+                    document.getElementById("menu").style.paddingRight = "30px"
+                }
+            // }
+        }
+        
+        function openPage() {
+        scrollTo(top)
+        
+        for (let i = 0; i < sects.length; i++) {
+            sects[i].style.width = "0%"
                 document.getElementById("sect-head").style.width = "0%"
             }
-
+        
             document.getElementById("sect-head").style.width = "100%"
             document.getElementById(event.target.id + "-sect").style.width = "100%"
-
+        
             if (event.target.id == "intro") {
                 document.getElementById("sect-head").innerText = "Intro."
                 colors.forEach(element => {
@@ -127,7 +144,7 @@
                     element.style.border = "#7FAA7F 3px solid"
                 });
             }
-
+        
             if (event.target.id == "who") {
                 document.getElementById("sect-head").innerText = "Who."
                 colors.forEach(element => {
@@ -140,7 +157,7 @@
                     element.style.border = "#bf7f7f 3px solid"
                 });
             }
-
+        
             if (event.target.id == "what") {
                 document.getElementById("sect-head").innerText = "What."
                 colors.forEach(element => {
@@ -153,7 +170,7 @@
                     element.style.border = "#bd9572 3px solid"
                 });
             }
-
+        
             if (event.target.id == "work") {
                 document.getElementById("sect-head").innerText = "Work."
                 colors.forEach(element => {
@@ -167,24 +184,9 @@
                 });
             }
         }
-
-
-        // var prevScrollpos = window.pageYOffset;
-
-        // window.onscroll = function () {
-        //     var currentScrollPos = window.pageYOffset;
-
-        //     if (prevScrollpos > currentScrollPos) {
-        //         document.getElementById("nav-bar").style.opacity = "1";
-        //     } else {
-        //         document.getElementById("nav-bar").style.opacity = "0";
-        //     }
-
-        //     prevScrollpos = currentScrollPos;
-        // }
     </script>
 
-
+<script src="https://kit.fontawesome.com/8e92285593.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
