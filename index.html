@@ -11,9 +11,10 @@
 <body class="container colors">
     <header class="em colors" id="global-header">
 
-        <span class="menu" id="menu"><i class="fas fa-plus-square" id="menuBtn" onclick="toggleNav()"></i></span>
+        <span class="menu navBtn" id="menu"><i class="fas fa-plus-square navBtn" id="menuBtn"
+                onclick="toggleNav()"></i></span>
         <nav class="em box colors" id="nav-bar">
-            <span class="em nav-link"><i class="fa fa-times" id="closeBtn" onclick="toggleNav()"></i></span>
+            <span class="em"><i class="fa fa-times" id="closeBtn" onclick="toggleNav()"></i></span>
             <ul class="em" id="nav-links">
                 <li class="em nav-link" id="intro" onclick="openPage()"> Intro </li>
                 <li class="em nav-link" id="who" onclick="openPage()"> Who </li>
@@ -28,7 +29,7 @@
     </header>
 
     <main class="em content">
-        <section class="em sects" id="intro-sect">
+        <section class="em sects open" id="intro-sect">
             <div class="em sect-content" id="intro-content">
                 <div class="em sect-p box colors" id="intro-p">
                     <h2 class="em content-head">Eric Myer</h2>
@@ -93,100 +94,10 @@
 
     <footer class="em colors" id="global-footer">
         <span id="cr">Designed & Coded by Eric Myer</i></span>
-        <!-- <span id="social">Socials</span> -->
     </footer>
 
-    <script>
-        sects = document.getElementsByClassName("sects")
-        colors = document.querySelectorAll(".colors")
-        alt = document.querySelectorAll(".box")
-
-        function toggleNav() {
-            // if (window.innerWidth <= 1000) {
-                if (document.getElementById("nav-bar").style.visibility == "hidden") {
-                    document.getElementById("nav-bar").style.visibility = "initial"
-                    document.getElementById("nav-bar").style.width = "75vw"
-                    document.getElementById("closeBtn").style.fontSize = "40px"
-                    document.getElementById("closeBtn").style.visibility = "visible"
-                    document.getElementById("nav-links").style.fontSize = "40px"
-                    document.getElementById("menuBtn").style.visibility = "hidden"
-                } else {
-                    document.getElementById("nav-bar").style.visibility = "hidden"
-                    document.getElementById("nav-bar").style.width = "0"
-                    document.getElementById("closeBtn").style.fontSize = "0"
-                    document.getElementById("nav-links").style.fontSize = "0"
-                    document.getElementById("menuBtn").style.visibility = "visible"
-                    document.getElementById("menu").style.paddingRight = "30px"
-                }
-            // }
-        }
-        
-        function openPage() {
-        scrollTo(top)
-        
-        for (let i = 0; i < sects.length; i++) {
-            sects[i].style.width = "0%"
-                document.getElementById("sect-head").style.width = "0%"
-            }
-        
-            document.getElementById("sect-head").style.width = "100%"
-            document.getElementById(event.target.id + "-sect").style.width = "100%"
-        
-            if (event.target.id == "intro") {
-                document.getElementById("sect-head").innerText = "Intro."
-                colors.forEach(element => {
-                    element.style.backgroundColor = "#001900"
-                    element.style.color = "#7FAA7F"
-                });
-                alt.forEach(element => {
-                    element.style.backgroundColor = "#001900"
-                    element.style.color = "#7FAA7F"
-                    element.style.border = "#7FAA7F 3px solid"
-                });
-            }
-        
-            if (event.target.id == "who") {
-                document.getElementById("sect-head").innerText = "Who."
-                colors.forEach(element => {
-                    element.style.backgroundColor = "#330000"
-                    element.style.color = "#bf7f7f"
-                });
-                alt.forEach(element => {
-                    element.style.backgroundColor = "#330000"
-                    element.style.color = "#bf7f7f"
-                    element.style.border = "#bf7f7f 3px solid"
-                });
-            }
-        
-            if (event.target.id == "what") {
-                document.getElementById("sect-head").innerText = "What."
-                colors.forEach(element => {
-                    element.style.backgroundColor = "#2b1706"
-                    element.style.color = "#bd9572"
-                });
-                alt.forEach(element => {
-                    element.style.backgroundColor = "#2b1706"
-                    element.style.color = "#bd9572"
-                    element.style.border = "#bd9572 3px solid"
-                });
-            }
-        
-            if (event.target.id == "work") {
-                document.getElementById("sect-head").innerText = "Work."
-                colors.forEach(element => {
-                    element.style.backgroundColor = "#001313"
-                    element.style.color = "#667c7d"
-                });
-                alt.forEach(element => {
-                    element.style.backgroundColor = "#001313"
-                    element.style.color = "#667c7d"
-                    element.style.border = "#667c7d 3px solid"
-                });
-            }
-        }
-    </script>
-
-<script src="https://kit.fontawesome.com/8e92285593.js" crossorigin="anonymous"></script>
+    <script src="/v2.js"></script>
+    <script src="https://kit.fontawesome.com/8e92285593.js" crossorigin="anonymous"></script>
 </body>
 
 </html>

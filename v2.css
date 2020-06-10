@@ -3,6 +3,10 @@
     src: url("./fonts/Ginger/F37_Ginger_Pro_Bold.otf");
 }
 
+.open{
+    width: 100% !important;
+}
+
 .colors{
     background-color: #001900;
     color: #7FAA7F;
@@ -30,7 +34,7 @@
     margin: 0;
 }
 
- .nav-link{
+.nav-link{
     display: flex;
     cursor: pointer;
     align-items: center;
@@ -166,13 +170,13 @@
 
 #profilejpg{
     max-width: 100%;
-    max-height: 100%;
+    max-height: auto;
     border-radius: 16px;
     box-shadow: -5px 10px 4px rgba(0, 0, 0, 0.5);
 }
 
 #intro-sect{
-    width: 100%;
+    width: 0%;
 }
 
 #who-sect{
@@ -202,20 +206,25 @@
 }
 
 #closeBtn{
-visibility: hidden;
+    visibility: hidden;
 }
 
 @media (max-width: 1000px){
-    .menuBtn{
-        visibility: visible;
+    .openNav{
+        visibility: visible !important;
+        width: 75vw !important;
+        font-size: 40px !important;
     }
-    .menu{
-        visibility: visible;
+    
+    .navBtn{
+        visibility: visible !important;
+        font-size: 40px !important;
     }
+    
     .nav-link:hover{
         align-items: center;
     }
-
+    
     #nav-bar{
         visibility: hidden;
         position: fixed;
@@ -231,7 +240,7 @@ visibility: hidden;
         box-shadow: -8px 0px 4px rgba(0, 0, 0, 0.5);
         transition: all .3s ease-out;
     }
-
+    
     #nav-links{
         flex-direction: column;
         justify-content: space-evenly;
